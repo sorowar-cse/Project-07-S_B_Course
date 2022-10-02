@@ -1,23 +1,217 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #ebebeb;
+}
+header{
+    height: 90vh;
+    background-image: url('img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-header {
+
+}
+.navbar{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10px 5px 40px;
 }
-
-.logo,
-.nav-social {
-    width: 33%;
+.logo img{
+   width: 90px;
+   margin-left: 2vw;
 }
-
-.logo img {
-    height: ;
-    width: 64px;
-}
-
-.navbar {
+nav ul{
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: 50px;
+    width: 25vw;
+    list-style: none;
+    margin-left: 20vw;
+}
+nav ul li{
+    padding: 0 1vw;
+}
+nav ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+nav ul li a::after{
+    content: '';
+    display: block;
+    width: 0%;
+    height: 4px;
+}
+nav ul li a:hover::after{
+    width: 100%;
+    background-color: rgb(3, 239, 78);
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -o-transition: 0.5s all;
+}
+.nav-social-icon{
+    margin-right: 2vw;
+}
+.nav-social-icon .login{
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius:10px;
+    background-color: white;
+    margin-right: 5px;
+    -webkit-border-radius:10px;
+    -moz-border-radius:10px;
+    -ms-border-radius:10px;
+    -o-border-radius:10px;
+}
+.nav-social-icon .login:hover{
+    background-color: #043C3B;
+    color: white;
+}
+.nav-social-icon i{
+    margin-right: 5px;
+    font-size: 1.4rem;
+    color: white;
+
+}
+.nav-social-icon i:hover{
+    color: rgb(13, 244, 148);
+}
+/*=======================================
+            hero section
+========================================= */
+.hero{
+    padding-top: 15vh;
+    display: flex;
+    justify-content: center;
+    text-align: end;
+    margin-right: 5vw;
+    flex-direction: column;
+}
+.hero-text h1{
+    font-size: 4rem;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.hero-text p{
+    font-size: 1.5rem;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.hero-text button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgba(93, 255, 6, 0.942);
+    color: rgb(31, 28, 28);
+    font-size: 1.2rem;
+    font-family: monospace;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+}
+
+#check{
+    display: none;
+}
+
+.checkbtn i{
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    display: none;
+}
+@media (max-width: 890px){
+   header{
+        height: 70vh;
+   }
+   .logo{
+        margin-left: 30vw;
+   }
+   .checkbtn i{
+       display: block;
+   }
+   nav ul{
+         position: fixed;
+         width: 100%;
+         height: 100vh;
+         background: rgb(93,162,101);
+         background: linear-gradient(90deg, rgba(93,162,101,1) 3%, rgba(39,107,85,1) 57%, rgba(8,72,71,1) 100%);
+         top: 90px;
+         left: -1000%;
+         padding-top: 20px;
+         text-align: center;
+         transition: ease 0.5s;
+         flex-direction: column;
+         justify-content: start;
+         line-height: 50px;
+         -webkit-transition: ease 0.5s;
+         -moz-transition: ease 0.5s;
+         -ms-transition: ease 0.5s;
+         -o-transition: ease 0.5s;
+}
+   .nav-social-icon{
+      position: fixed;
+      top: 550px;
+      left: -100%;
+      margin-left: 30%;
+      transition: ease-out 0.8s;
+      -webkit-transition: ease-out 0.8s;
+      -moz-transition: ease-out 0.8s;
+      -ms-transition: ease-out 0.8s;
+      -o-transition: ease-out 0.8s;
+}
+   .nav-social-icon .login{
+       background-color: transparent;
+        color: white;
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding: 10px 15px;
+        border-radius:10px;
+        border: 2px solid white;
+   }
+    .nav-social-icon .login:hover{
+         background-color: white;
+         color: rgb(11, 4, 41);
+    }
+   #check:checked ~ .navbar nav ul{
+        left: 0;
+    }
+   #check:checked ~ .navbar .nav-social-icon{
+        left: 0;
+    }
+    nav ul li a:hover::after{
+        width: 20%;
+        margin-left: 40%;
+    }
+    .hero-text h1{
+        font-size: 3rem;
+    }
+    .hero-text p{
+        font-size: 1.2rem;
+    }
     
 }
-
-.navbar a {}
+@media  (max-width:1350px) {
+    .hero-text h1{
+        font-size: 3rem;
+    }
+    .hero-text p{
+        font-size: 1.2rem;
+    }
+}
